@@ -1,0 +1,6 @@
+D:\wesley\2.Myrepos\1.Curso-ETL-com-SQL-Server-Integration-Services\DwVendas\bin\Debug\DwVendas.dacpac
+D:\wesley\2.Myrepos\1.Curso-ETL-com-SQL-Server-Integration-Services\DwVendas\bin\Debug\DwVendas.dll
+D:\wesley\2.Myrepos\1.Curso-ETL-com-SQL-Server-Integration-Services\DwVendas\bin\Debug\DwVendas.pdb
+D:\wesley\2.Myrepos\1.Curso-ETL-com-SQL-Server-Integration-Services\DwVendas\obj\Debug\DwVendas.sqlproj.AssemblyReference.cache
+D:\wesley\2.Myrepos\1.Curso-ETL-com-SQL-Server-Integration-Services\DwVendas\obj\Debug\DwVendas.dll
+D:\wesley\2.Myrepos\1.Curso-ETL-com-SQL-Server-Integration-Services\DwVendas\obj\Debug\DwVendas.pdb

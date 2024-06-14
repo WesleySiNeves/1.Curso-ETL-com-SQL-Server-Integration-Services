@@ -1,0 +1,20 @@
+﻿IdProduto;Nome;Preco;IdCategoria;Estoque
+1;Smartphone;999.99;1;50
+2;Notebook;1999.99;1;30
+3;Livro de SQL;49.99;2;100
+4;Camiseta;29.99;3;200
+5;Sofá;899.99;4;10
+6;Boneca;19.99;5;150
+7;Tablet;499.99;1;75
+8;"Monitor 24""";199.99;1;40
+9;Mouse Gamer;39.99;1;150
+10;Teclado Mecânico;79.99;1;60
+11;Fone de Ouvido;29.99;1;120
+12;Livro de Python;59.99;2;80
+13;Livro de Java;69.99;2;70
+14;Calça Jeans;89.99;3;100
+15;Jaqueta de Couro;299.99;3;30
+16;Cadeira de Escritório;399.99;4;20
+17;Armário de Cozinha;499.99;4;15
+18;Carrinho de Controle Remoto;49.99;5;100
+19;Quebra-Cabeça 1000 Peças;24.99;5;200

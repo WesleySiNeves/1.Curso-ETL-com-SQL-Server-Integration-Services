@@ -1,0 +1,753 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/5/2024 2:59:59 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="NB188"
+  DTS:CreatorName="IMPLANTA\Wesley.Neves"
+  DTS:DTSID="{3D2E9E43-EF0B-4947-8FA5-9FFE98579BE5}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{38334118-1355-4D5A-8378-9882DAC99A27}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[NB188.PortalVendas]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F1F55DC6-650F-4058-8862-5584348B8A8D}"
+      DTS:ObjectName="NB188.PortalVendas">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=NB188;Initial Catalog=PortalVendas;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[NB188.PortalVendas.operador]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DA324306-EE91-4434-B8E2-D70AB829E143}"
+      DTS:ObjectName="NB188.PortalVendas.operador">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=NB188;User ID=operador;Initial Catalog=PortalVendas;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package-{DA324306-EE91-4434-B8E2-D70AB829E143}NB188.PortalVendas.operador;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA2LM5i1jwZk6KX+wBc68cDAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACn8OXEKXXtleEM8Xp0Mh3oAAAAAASAAACgAAAAEAAAAKtqlAVmHDYmxXZ7z3u4N9sgAAAAVqnB2s4Foq5sGKCwiMBFi+M5w/qwRM40U/KN/ARGB6QUAAAAwcXc/9m8EZ2bdRQBzGdyIKj2IJk</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{FC9D619B-87D0-4CA7-8349-267ABA9D7605}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Union Clientes e Funcionarios"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarefa Fluxo de Dados"
+          DTS:DTSID="{CDF55E61-5F57-4CEE-B90F-032B9F314B0E}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Union Clientes e Funcionarios"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Union Clientes e Funcionarios\Get Clientes"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origem OLE DB"
+                  name="Get Clientes"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[Cadastro].[Clientes]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="A variável que contém o comando SQL a ser executado."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Union Clientes e Funcionarios\Get Clientes.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[NB188.PortalVendas]"
+                      connectionManagerRefId="Package.ConnectionManagers[NB188.PortalVendas]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Union Clientes e Funcionarios\Get Clientes.Outputs[Saída de Origem OLE DB]"
+                      name="Saída de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Union Clientes e Funcionarios\Get Clientes.Outputs[Saída de Origem OLE DB].Columns[Nome]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Union Clientes e Funcionarios\Get Clientes.Outputs[Saída de Origem OLE DB].ExternalColumns[Nome]"
+                          length="100"
+                          lineageId="Package\Sequence Container\Union Clientes e Funcionarios\Get Clientes.Outputs[Saída de Origem OLE DB].Columns[Nome]"
+                          name="Nome"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Union Clientes e Funcionarios\Get Clientes.Outputs[Saída de Origem OLE DB].ExternalColumns[IdCliente]"
+                          dataType="i4"
+                          name="IdCliente" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Union Clientes e Funcionarios\Get Clientes.Outputs[Saída de Origem OLE DB].ExternalColumns[Nome]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Nome" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Union Clientes e Funcionarios\Get Clientes.Outputs[Saída de Origem OLE DB].ExternalColumns[Email]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Email" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Union Clientes e Funcionarios\Get Clientes.Outputs[Saída de Origem OLE DB].ExternalColumns[Telefone]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Telefone" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Union Clientes e Funcionarios\Get Clientes.Outputs[Saída de Erro de Origem OLE DB]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Union Clientes e Funcionarios\Get Clientes.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Union Clientes e Funcionarios\Get Clientes.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Union Clientes e Funcionarios\Get Clientes.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Union Clientes e Funcionarios\Get Clientes.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Union Clientes e Funcionarios\Get Clientes.Outputs[Saída de Erro de Origem OLE DB].Columns[Nome]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\Sequence Container\Union Clientes e Funcionarios\Get Clientes.Outputs[Saída de Erro de Origem OLE DB].Columns[Nome]"
+                          name="Nome" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Union Clientes e Funcionarios\Get Funcionarios"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origem OLE DB"
+                  name="Get Funcionarios"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[Cadastro].[Funcionarios]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="A variável que contém o comando SQL a ser executado."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Union Clientes e Funcionarios\Get Funcionarios.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[NB188.PortalVendas]"
+                      connectionManagerRefId="Package.ConnectionManagers[NB188.PortalVendas]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Union Clientes e Funcionarios\Get Funcionarios.Outputs[Saída de Origem OLE DB]"
+                      name="Saída de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Union Clientes e Funcionarios\Get Funcionarios.Outputs[Saída de Origem OLE DB].Columns[Nome]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Union Clientes e Funcionarios\Get Funcionarios.Outputs[Saída de Origem OLE DB].ExternalColumns[Nome]"
+                          length="100"
+                          lineageId="Package\Sequence Container\Union Clientes e Funcionarios\Get Funcionarios.Outputs[Saída de Origem OLE DB].Columns[Nome]"
+                          name="Nome"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Union Clientes e Funcionarios\Get Funcionarios.Outputs[Saída de Origem OLE DB].ExternalColumns[IdFuncionario]"
+                          dataType="i4"
+                          name="IdFuncionario" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Union Clientes e Funcionarios\Get Funcionarios.Outputs[Saída de Origem OLE DB].ExternalColumns[Nome]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Nome" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Union Clientes e Funcionarios\Get Funcionarios.Outputs[Saída de Origem OLE DB].ExternalColumns[Cargo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Cargo" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Union Clientes e Funcionarios\Get Funcionarios.Outputs[Saída de Origem OLE DB].ExternalColumns[Salario]"
+                          dataType="numeric"
+                          name="Salario"
+                          precision="10"
+                          scale="2" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Union Clientes e Funcionarios\Get Funcionarios.Outputs[Saída de Erro de Origem OLE DB]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Union Clientes e Funcionarios\Get Funcionarios.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Union Clientes e Funcionarios\Get Funcionarios.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Union Clientes e Funcionarios\Get Funcionarios.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Union Clientes e Funcionarios\Get Funcionarios.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Union Clientes e Funcionarios\Get Funcionarios.Outputs[Saída de Erro de Origem OLE DB].Columns[Nome]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\Sequence Container\Union Clientes e Funcionarios\Get Funcionarios.Outputs[Saída de Erro de Origem OLE DB].Columns[Nome]"
+                          name="Nome" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Union Clientes e Funcionarios\Multicast"
+                  componentClassID="Microsoft.Multicast"
+                  contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+                  description="Distribui cada linha de entrada em cada linha em uma ou mais saídas. Por exemplo, ramifique seu fluxo de dados para criar uma cópia de dados de forma que alguns valores possam ser mascarados antes do compartilhamento com parceiros externos."
+                  name="Multicast">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Union Clientes e Funcionarios\Multicast.Inputs[Multicast Entrada 1]"
+                      name="Multicast Entrada 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Union Clientes e Funcionarios\Multicast.Outputs[Multicast Saída 1]"
+                      dangling="true"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Saída 1"
+                      synchronousInputId="Package\Sequence Container\Union Clientes e Funcionarios\Multicast.Inputs[Multicast Entrada 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Union Clientes e Funcionarios\Remover Duplicatas"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Classificar;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+                  description="Classifica os dados de entrada em ordem crescente ou decrescente quando eles não podem ser classificados em sua origem. Por exemplo, classifique dados de vendas por 'customer id' antes de eles serem gravados em um arquivo simples e entregues a outro departamento. Observação: essa transformação não é recomendável para fluxos de dados grandes."
+                  name="Remover Duplicatas"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se a transformação Classificação remove linhas com valores de classificação duplicados."
+                      name="EliminateDuplicates">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o número máximo de threads a usar para classificação."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Union Clientes e Funcionarios\Remover Duplicatas.Inputs[Classificar Entrada]"
+                      name="Classificar Entrada">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Union Clientes e Funcionarios\Remover Duplicatas.Inputs[Classificar Entrada].Columns[Nome]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="Nome"
+                          lineageId="Package\Sequence Container\Union Clientes e Funcionarios\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[Nome]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica as opções de comparação para os dados de caractere."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica a ordem de classificação da coluna."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Union Clientes e Funcionarios\Remover Duplicatas.Outputs[Classificar Saída]"
+                      isSorted="true"
+                      name="Classificar Saída">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Union Clientes e Funcionarios\Remover Duplicatas.Outputs[Classificar Saída].Columns[Nome]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\Sequence Container\Union Clientes e Funcionarios\Remover Duplicatas.Outputs[Classificar Saída].Columns[Nome]"
+                          name="Nome"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica o identificador de linhagem da coluna de entrada associada à coluna de saída."
+                              name="SortColumnId">#{Package\Sequence Container\Union Clientes e Funcionarios\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[Nome]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Union Clientes e Funcionarios\Unir Tudo"
+                  componentClassID="Microsoft.UnionAll"
+                  contactInfo="Unir Tudo;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+                  description="Combina linhas de vários fluxos de dados sem classificação. Por exemplo, adicione novamente as linhas a um fluxo de dados após a correção de erros. Se a classificação for importante, é recomendável usar a transformação Mesclagem."
+                  name="Unir Tudo"
+                  version="1">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Union Clientes e Funcionarios\Unir Tudo.Inputs[Unir Tudo Entrada 1]"
+                      name="Unir Tudo Entrada 1">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Union Clientes e Funcionarios\Unir Tudo.Inputs[Unir Tudo Entrada 1].Columns[Nome]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="Nome"
+                          lineageId="Package\Sequence Container\Union Clientes e Funcionarios\Get Clientes.Outputs[Saída de Origem OLE DB].Columns[Nome]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Identificação de linhagem de coluna de saída"
+                              name="OutputColumnLineageID">#{Package\Sequence Container\Union Clientes e Funcionarios\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[Nome]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Sequence Container\Union Clientes e Funcionarios\Unir Tudo.Inputs[Entrada Unir Tudo 1]"
+                      hasSideEffects="true"
+                      name="Entrada Unir Tudo 1">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Union Clientes e Funcionarios\Unir Tudo.Inputs[Entrada Unir Tudo 1].Columns[Nome]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="Nome"
+                          lineageId="Package\Sequence Container\Union Clientes e Funcionarios\Get Funcionarios.Outputs[Saída de Origem OLE DB].Columns[Nome]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Identificação de linhagem de coluna de saída"
+                              name="OutputColumnLineageID">#{Package\Sequence Container\Union Clientes e Funcionarios\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[Nome]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Sequence Container\Union Clientes e Funcionarios\Unir Tudo.Inputs[Entrada Unir Tudo 2]"
+                      dangling="true"
+                      hasSideEffects="true"
+                      name="Entrada Unir Tudo 2">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Union Clientes e Funcionarios\Unir Tudo.Outputs[Unir Tudo Saída 1]"
+                      name="Unir Tudo Saída 1">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Union Clientes e Funcionarios\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[Nome]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\Sequence Container\Union Clientes e Funcionarios\Unir Tudo.Outputs[Unir Tudo Saída 1].Columns[Nome]"
+                          name="Nome" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Union Clientes e Funcionarios.Paths[Classificar Saída]"
+                  endId="Package\Sequence Container\Union Clientes e Funcionarios\Multicast.Inputs[Multicast Entrada 1]"
+                  name="Classificar Saída"
+                  startId="Package\Sequence Container\Union Clientes e Funcionarios\Remover Duplicatas.Outputs[Classificar Saída]" />
+                <path
+                  refId="Package\Sequence Container\Union Clientes e Funcionarios.Paths[Saída de Origem OLE DB]"
+                  endId="Package\Sequence Container\Union Clientes e Funcionarios\Unir Tudo.Inputs[Unir Tudo Entrada 1]"
+                  name="Saída de Origem OLE DB"
+                  startId="Package\Sequence Container\Union Clientes e Funcionarios\Get Clientes.Outputs[Saída de Origem OLE DB]" />
+                <path
+                  refId="Package\Sequence Container\Union Clientes e Funcionarios.Paths[Saída de Origem OLE DB1]"
+                  endId="Package\Sequence Container\Union Clientes e Funcionarios\Unir Tudo.Inputs[Entrada Unir Tudo 1]"
+                  name="Saída de Origem OLE DB"
+                  startId="Package\Sequence Container\Union Clientes e Funcionarios\Get Funcionarios.Outputs[Saída de Origem OLE DB]" />
+                <path
+                  refId="Package\Sequence Container\Union Clientes e Funcionarios.Paths[Unir Tudo Saída 1]"
+                  endId="Package\Sequence Container\Union Clientes e Funcionarios\Remover Duplicatas.Inputs[Classificar Entrada]"
+                  name="Unir Tudo Saída 1"
+                  startId="Package\Sequence Container\Union Clientes e Funcionarios\Unir Tudo.Outputs[Unir Tudo Saída 1]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="216.8,41.6"
+          Id="Package\Sequence Container\Union Clientes e Funcionarios"
+          TopLeft="39.6999938532712,31.5999990236759" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="393.6,217.6"
+          Size="393.6,260.8"
+          Id="Package\Sequence Container"
+          TopLeft="72.4999960387748,65.8666662086381" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Union Clientes e Funcionarios">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="119.2,41.6"
+          Id="Package\Sequence Container\Union Clientes e Funcionarios\Multicast"
+          TopLeft="204.166655511492,388.266663966709" />
+        <NodeLayout
+          Size="172,41.6"
+          Id="Package\Sequence Container\Union Clientes e Funcionarios\Remover Duplicatas"
+          TopLeft="193.333322770066,282.533331368632" />
+        <NodeLayout
+          Size="157.6,41.6"
+          Id="Package\Sequence Container\Union Clientes e Funcionarios\Get Funcionarios"
+          TopLeft="259.999985794227,71.9333328331179" />
+        <NodeLayout
+          Size="124,41.6"
+          Id="Package\Sequence Container\Union Clientes e Funcionarios\Unir Tudo"
+          TopLeft="192.499989482264,192.399998662074" />
+        <NodeLayout
+          Size="136,41.6"
+          Id="Package\Sequence Container\Union Clientes e Funcionarios\Get Clientes"
+          TopLeft="66.6666630241607,71.9333328331179" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Union Clientes e Funcionarios.Paths[Saída de Origem OLE DB1]"
+          TopLeft="338.799985794227,113.533332833118">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-64.9666629786295,78.8666658289565"
+              Start="0,0"
+              End="-64.9666629786295,71.3666658289565">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.7171969560061" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.7171969560061"
+                    Point2="0,46.7171969560061"
+                    Point3="-4,46.7171969560061" />
+                  <mssgle:LineSegment
+                    End="-60.9666629786295,46.7171969560061" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-60.9666629786295,46.7171969560061"
+                    Point2="-64.9666629786295,46.7171969560061"
+                    Point3="-64.9666629786295,50.7171969560061" />
+                  <mssgle:LineSegment
+                    End="-64.9666629786295,71.3666658289565" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Union Clientes e Funcionarios.Paths[Saída de Origem OLE DB]"
+          TopLeft="134.666663024161,113.533332833118">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="100.49999312477,78.8666658289565"
+              Start="0,0"
+              End="100.49999312477,71.3666658289565">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.7171969560061" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.7171969560061"
+                    Point2="0,46.7171969560061"
+                    Point3="4,46.7171969560061" />
+                  <mssgle:LineSegment
+                    End="96.4999931247701,46.7171969560061" />
+                  <mssgle:CubicBezierSegment
+                    Point1="96.4999931247701,46.7171969560061"
+                    Point2="100.49999312477,46.7171969560061"
+                    Point3="100.49999312477,50.7171969560061" />
+                  <mssgle:LineSegment
+                    End="100.49999312477,71.3666658289565" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Union Clientes e Funcionarios.Paths[Classificar Saída]"
+          TopLeft="280.166656057868,324.133331368632">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-16.400000546376,64.1333325980769"
+              Start="0,0"
+              End="-16.400000546376,56.6333325980769">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.0666662990384" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.0666662990384"
+                    Point2="0,32.0666662990384"
+                    Point3="-4,32.0666662990384" />
+                  <mssgle:LineSegment
+                    End="-12.400000546376,32.0666662990384" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-12.400000546376,32.0666662990384"
+                    Point2="-16.400000546376,32.0666662990384"
+                    Point3="-16.400000546376,36.0666662990384" />
+                  <mssgle:LineSegment
+                    End="-16.400000546376,56.6333325980769" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-16.200000273188,37.0666662990384,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Union Clientes e Funcionarios.Paths[Unir Tudo Saída 1]"
+          TopLeft="254.499989482264,233.999998662074">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="24.833333287802,48.5333327065574"
+              Start="0,0"
+              End="24.833333287802,41.0333327065574">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2666663532787" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2666663532787"
+                    Point2="0,24.2666663532787"
+                    Point3="4,24.2666663532787" />
+                  <mssgle:LineSegment
+                    End="20.833333287802,24.2666663532787" />
+                  <mssgle:CubicBezierSegment
+                    Point1="20.833333287802,24.2666663532787"
+                    Point2="24.833333287802,24.2666663532787"
+                    Point3="24.833333287802,28.2666663532787" />
+                  <mssgle:LineSegment
+                    End="24.833333287802,41.0333327065574" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Union Clientes e Funcionarios\Get Funcionarios">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Union Clientes e Funcionarios\Get Clientes">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
