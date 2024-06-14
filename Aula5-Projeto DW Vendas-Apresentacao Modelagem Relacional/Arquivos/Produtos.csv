@@ -18,3 +18,104 @@
 17;Armário de Cozinha;499.99;4;15
 18;Carrinho de Controle Remoto;49.99;5;100
 19;Quebra-Cabeça 1000 Peças;24.99;5;200
+20;Geladeira;1999.99;4;25
+21;Fogão;1299.99;4;35
+22;Micro-ondas;399.99;4;50
+23;Televisão 50";2999.99;1;20
+24;Console de Video Game;2499.99;1;15
+25;Livro de C#;59.99;2;90
+26;Livro de JavaScript;69.99;2;85
+27;Camisa Polo;49.99;3;150
+28;Tênis Esportivo;199.99;3;120
+29;Vestido;99.99;3;100
+30;Mesa de Jantar;799.99;4;10
+31;Guarda-Roupa;1499.99;4;8
+32;Tapete;199.99;4;60
+33;Brinquedo Educativo;39.99;5;200
+34;Jogo de Tabuleiro;59.99;5;150
+35;Lego;199.99;5;50
+36;Drone;799.99;5;30
+37;Kindle;499.99;1;45
+38;Câmera Fotográfica;1599.99;1;25
+39;Impressora Multifuncional;499.99;1;40
+40;Scanner;299.99;1;35
+41;Livro de React;59.99;2;75
+42;Livro de Angular;69.99;2;65
+43;Saia Jeans;79.99;3;110
+44;Blusa de Frio;119.99;3;50
+45;Mesa de Centro;199.99;4;20
+46;Cama Box;899.99;4;15
+47;Estante;299.99;4;25
+48;Boneco de Ação;99.99;5;80
+49;Patinete;199.99;5;30
+50;Barraca de Camping;399.99;5;40
+51;Smartwatch;799.99;1;35
+52;Fritadeira Elétrica;299.99;4;40
+53;Tablet Infantil;249.99;1;60
+54;Livro de PHP;49.99;2;70
+55;Livro de Ruby;59.99;2;65
+56;Jaqueta Jeans;199.99;3;90
+57;Calça Social;149.99;3;80
+58;Escrivaninha;499.99;4;25
+59;Rack para TV;299.99;4;30
+60;Bicicleta Infantil;399.99;5;25
+61;Action Figure;119.99;5;70
+62;Caixa de Som Bluetooth;149.99;1;50
+63;Webcam;199.99;1;40
+64;Livro de Ciência de Dados;79.99;2;60
+65;Livro de Machine Learning;89.99;2;55
+66;Blusa de Tricô;129.99;3;45
+67;Shorts;69.99;3;120
+68;Aparador;399.99;4;20
+69;Cômoda;699.99;4;18
+70;Carrinho de Bebê;599.99;5;15
+71;Triciclo;199.99;5;20
+72;Notebook Gamer;4999.99;1;10
+73;Livro de Inteligência Artificial;99.99;2;40
+74;Livro de Deep Learning;109.99;2;35
+75;Tênis Casual;159.99;3;100
+76;Cadeira de Praia;49.99;4;60
+77;Mesa de Cabeceira;129.99;4;30
+78;Ventilador de Teto;199.99;4;25
+79;Ventilador Portátil;79.99;4;50
+80;Ventilador de Mesa;59.99;4;40
+81;Ventilador de Parede;99.99;4;35
+82;Livro de Economia;89.99;2;70
+83;Livro de Finanças Pessoais;79.99;2;80
+84;Livro de Investimentos;99.99;2;65
+85;Blusa de Algodão;39.99;3;150
+86;Shorts Jeans;49.99;3;120
+87;Calça Legging;29.99;3;200
+88;Mesa de Computador;299.99;4;20
+89;Cadeira de Balanço;149.99;4;15
+90;Guarda-Sol;99.99;4;35
+91;Livro de História;29.99;2;100
+92;Livro de Biologia;39.99;2;90
+93;Livro de Química;49.99;2;85
+94;Blusa de Malha;59.99;3;100
+95;Vestido de Festa;199.99;3;30
+96;Camiseta Regata;19.99;3;150
+97;Cadeira Gamer;699.99;4;10
+98;Mesa de Bar;399.99;4;8
+99;Cadeira de Praça;149.99;4;20
+100;Livro de Física;29.99;2;80
+101;Livro de Matemática;39.99;2;70
+102;Livro de Geografia;49.99;2;65
+103;Blusa de Seda;89.99;3;110
+104;Calça Social Feminina;119.99;3;50
+105;Vestido Longo;299.99;3;30
+106;Cadeira de Barbeiro;899.99;4;15
+107;Cadeira de Massagem;1599.99;4;8
+108;Cadeira de Rodas;499.99;4;25
+109;Livro de Artes;59.99;2;75
+110;Livro de Filosofia;69.99;2;65
+111;Livro de Psicologia;79.99;2;60
+112;Blusa de Moletom;49.99;3;80
+113;Calça Pantalona;69.99;3;70
+114;Macacão;99.99;3;55
+115;Mesa de Poker;499.99;4;15
+116;Cadeira de Escritório Ergonômica;899.99;4;10
+117;Cadeira de Jardim;149.99;4;20
+118;Livro de Literatura Brasileira;29.99;2;90
+119;Livro de Literatura Estrangeira;39.99;2;80
+120;Livro de Poesia;49.99;2;70
