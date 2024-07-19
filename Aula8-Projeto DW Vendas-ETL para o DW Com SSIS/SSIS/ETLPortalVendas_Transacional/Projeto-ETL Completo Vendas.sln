@@ -7,6 +7,10 @@ Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "ETLPortalVendas_Transaciona
 EndProject
 Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "ETLPortalVendas_DW", "..\ETLPortalVendas_DW\ETLPortalVendas_DW.dtproj", "{7629E5E9-0900-4550-BFAD-9F488E8F4CC8}"
 EndProject
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "DWVendasIncremental", "..\DWVendasIncremental\DWVendasIncremental.dtproj", "{FF9A8FC7-CDE1-4225-8C9B-57B6DFDB296A}"
+EndProject
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "Demostração Slow change dimension", "..\Demostração Slow change dimension\Demostração Slow change dimension.dtproj", "{10B94277-6AD4-41B7-A968-44F3FF8F708C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Azure|Default = Azure|Default
@@ -21,6 +25,14 @@ Global
 		{7629E5E9-0900-4550-BFAD-9F488E8F4CC8}.Azure|Default.Build.0 = Azure
 		{7629E5E9-0900-4550-BFAD-9F488E8F4CC8}.Development|Default.ActiveCfg = Development
 		{7629E5E9-0900-4550-BFAD-9F488E8F4CC8}.Development|Default.Build.0 = Development
+		{FF9A8FC7-CDE1-4225-8C9B-57B6DFDB296A}.Azure|Default.ActiveCfg = Development
+		{FF9A8FC7-CDE1-4225-8C9B-57B6DFDB296A}.Azure|Default.Build.0 = Development
+		{FF9A8FC7-CDE1-4225-8C9B-57B6DFDB296A}.Development|Default.ActiveCfg = Development
+		{FF9A8FC7-CDE1-4225-8C9B-57B6DFDB296A}.Development|Default.Build.0 = Development
+		{10B94277-6AD4-41B7-A968-44F3FF8F708C}.Azure|Default.ActiveCfg = Development
+		{10B94277-6AD4-41B7-A968-44F3FF8F708C}.Azure|Default.Build.0 = Development
+		{10B94277-6AD4-41B7-A968-44F3FF8F708C}.Development|Default.ActiveCfg = Development
+		{10B94277-6AD4-41B7-A968-44F3FF8F708C}.Development|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

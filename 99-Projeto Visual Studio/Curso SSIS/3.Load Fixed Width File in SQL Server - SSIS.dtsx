@@ -1,0 +1,1135 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/28/2024 12:32:15 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="NB188"
+  DTS:CreatorName="IMPLANTA\Wesley.Neves"
+  DTS:DTSID="{B9CE7CFE-B498-4ACC-A946-49A57C856BA7}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{660CBD10-86BD-4152-ACFE-6B7F5C302B55}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{07A2D9B0-45C5-492D-86A2-364765ABC245}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1046"
+          DTS:HeaderRowDelimiter="_x0009_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\wesley\2.Myrepos\1.Curso-ETL-com-SQL-Server-Integration-Services\99-Projeto Visual Studio\Arquivos\Arquivo Tab delimited.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{9AB7CCC3-202B-4A77-A6D1-DEBD824CF8E5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="first_name"
+              DTS:DTSID="{26D7C614-7198-4779-B04A-9CF67B33EA0C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="last_name"
+              DTS:DTSID="{AB7AAC71-7F69-40E7-933B-E45B59AB69D0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="email"
+              DTS:DTSID="{D9B29B1A-87ED-40A7-998B-2BC1803B4F0C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="gender"
+              DTS:DTSID="{37DE44FE-D2FC-418A-9F57-657C7623CDA0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ip_address"
+              DTS:DTSID="{51437A56-D091-4D01-8B41-C4C4ECC258D6}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager Fixed]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{4956CED9-7528-4E69-81C1-90E1C09D0C5A}"
+      DTS:ObjectName="Flat File Connection Manager Fixed">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="FixedWidth"
+          DTS:LocaleID="1046"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter="_x000D__x000A_"
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\wesley\2.Myrepos\1.Curso-ETL-com-SQL-Server-Integration-Services\99-Projeto Visual Studio\Arquivos\Arquivo Fixed Width delimited.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="8"
+              DTS:MaximumWidth="8"
+              DTS:DataType="129"
+              DTS:ObjectName="Account "
+              DTS:DTSID="{CB8B3385-398D-4AB2-8B02-15E9218A87B0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="16"
+              DTS:MaximumWidth="16"
+              DTS:DataType="129"
+              DTS:ObjectName="LastName        "
+              DTS:DTSID="{C2D5EA82-33E4-4957-B2F1-8D525757CAF2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="16"
+              DTS:MaximumWidth="16"
+              DTS:DataType="129"
+              DTS:ObjectName="FirstName       "
+              DTS:DTSID="{D531252F-BB6C-4D8D-BB13-B237C02390B0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="12"
+              DTS:MaximumWidth="12"
+              DTS:DataType="129"
+              DTS:ObjectName="Balance     "
+              DTS:DTSID="{7BA21605-D603-4F18-AC18-35202AFD21B9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="14"
+              DTS:MaximumWidth="14"
+              DTS:DataType="129"
+              DTS:ObjectName="CreditLimit   "
+              DTS:DTSID="{59D1C636-E389-487C-B6B1-53A4E2C941DA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="16"
+              DTS:MaximumWidth="16"
+              DTS:DataType="129"
+              DTS:ObjectName="AccountCreated  "
+              DTS:DTSID="{CA06314D-3381-489C-AB4D-FC7C732722FD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnDelimiter=""
+              DTS:ColumnWidth="9"
+              DTS:MaximumWidth="9"
+              DTS:DataType="129"
+              DTS:ObjectName="Rating "
+              DTS:DTSID="{6870A85A-EC71-4437-B3CD-99D21962D0AA}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[NB188.PortalVendas]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3AE1A266-922F-411A-9918-631E10356497}"
+      DTS:ObjectName="NB188.PortalVendas">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=NB188;Initial Catalog=PortalVendas;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{3AE1A266-922F-411A-9918-631E10356497}NB188.PortalVendas;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Importar arquivos de largura fixa"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{5FC84A4F-F19C-4221-A471-8833E6D2FEBA}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Importar arquivos de largura fixa">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarefa Fluxo de Dados"
+          DTS:DTSID="{623A83B8-720E-47CA-94FF-78FF993AA971}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Importar Arquivo Com Delilitador Tab"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino OLE DB"
+                  name="Destino OLE DB"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[ArquivoClientesTabDelimited]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[NB188.PortalVendas]"
+                      connectionManagerRefId="Package.ConnectionManagers[NB188.PortalVendas]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB.Inputs[Entrada de Destino OLE DB]"
+                      errorOrTruncationOperation="Inserir"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Destino OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[id]"
+                          cachedDataType="i4"
+                          cachedName="id"
+                          externalMetadataColumnId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[id]"
+                          lineageId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[id]" />
+                        <inputColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[first_name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="first_name"
+                          externalMetadataColumnId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[first_name]"
+                          lineageId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[first_name]" />
+                        <inputColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[last_name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="last_name"
+                          externalMetadataColumnId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[last_name]"
+                          lineageId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[last_name]" />
+                        <inputColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[email]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="email"
+                          externalMetadataColumnId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[email]"
+                          lineageId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[email]" />
+                        <inputColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[gender]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="gender"
+                          externalMetadataColumnId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[gender]"
+                          lineageId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[gender]" />
+                        <inputColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[ip_address]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ip_address"
+                          externalMetadataColumnId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ip_address]"
+                          lineageId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[ip_address]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[id]"
+                          dataType="i4"
+                          name="id" />
+                        <externalMetadataColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[first_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="first_name" />
+                        <externalMetadataColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[last_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="last_name" />
+                        <externalMetadataColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[email]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="email" />
+                        <externalMetadataColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[gender]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="gender" />
+                        <externalMetadataColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ip_address]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ip_address" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Destino OLE DB"
+                      synchronousInputId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB.Inputs[Entrada de Destino OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Origem de Arquivo Simples;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+                  description="Origem de Arquivo Simples"
+                  localeId="1046"
+                  name="Origem de Arquivo Simples"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Especifica se colunas de comprimento zero são tratadas como nulas."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome de uma coluna de saída que contém o nome do arquivo. Se nenhum nome for especificado, nenhuma coluna de saída contendo o nome de arquivo será gerada."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples]"
+                      name="Saída de Origem de Arquivo Simples">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[id]"
+                          lineageId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[id]"
+                          name="id"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[first_name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[first_name]"
+                          length="50"
+                          lineageId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[first_name]"
+                          name="first_name"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[last_name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[last_name]"
+                          length="50"
+                          lineageId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[last_name]"
+                          name="last_name"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[email]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[email]"
+                          length="50"
+                          lineageId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[email]"
+                          name="email"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[gender]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[gender]"
+                          length="50"
+                          lineageId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[gender]"
+                          name="gender"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[ip_address]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[ip_address]"
+                          length="50"
+                          lineageId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].Columns[ip_address]"
+                          name="ip_address"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[id]"
+                          dataType="i4"
+                          name="id" />
+                        <externalMetadataColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[first_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="first_name" />
+                        <externalMetadataColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[last_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="last_name" />
+                        <externalMetadataColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[email]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="email" />
+                        <externalMetadataColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[gender]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="gender" />
+                        <externalMetadataColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[ip_address]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ip_address" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Erro de Origem de Arquivo Simples]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem de Arquivo Simples">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[Coluna de Saída de Erro de Origem de Arquivo Simples]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Coluna de Saída de Erro de Origem de Arquivo Simples"
+                          lineageId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[Coluna de Saída de Erro de Origem de Arquivo Simples]"
+                          name="Coluna de Saída de Erro de Origem de Arquivo Simples" />
+                        <outputColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab.Paths[Saída de Origem de Arquivo Simples]"
+                  endId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB.Inputs[Entrada de Destino OLE DB]"
+                  name="Saída de Origem de Arquivo Simples"
+                  startId="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples.Outputs[Saída de Origem de Arquivo Simples]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarefa Fluxo de Dados"
+          DTS:DTSID="{4b2e012e-23ff-4051-949f-b62da8893439}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Importar Arquivo Fixed Width"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Origem de Arquivo Simples;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+                  description="Origem de Arquivo Simples"
+                  localeId="1046"
+                  name="Get Dados"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Especifica se colunas de comprimento zero são tratadas como nulas."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome de uma coluna de saída que contém o nome do arquivo. Se nenhum nome for especificado, nenhuma coluna de saída contendo o nome de arquivo será gerada."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager Fixed]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager Fixed]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples]"
+                      name="Saída de Origem de Arquivo Simples">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples].Columns[Account ]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Account ]"
+                          length="8"
+                          lineageId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples].Columns[Account ]"
+                          name="Account "
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples].Columns[LastName        ]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[LastName        ]"
+                          length="16"
+                          lineageId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples].Columns[LastName        ]"
+                          name="LastName        "
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples].Columns[FirstName       ]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[FirstName       ]"
+                          length="16"
+                          lineageId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples].Columns[FirstName       ]"
+                          name="FirstName       "
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples].Columns[Balance     ]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Balance     ]"
+                          length="12"
+                          lineageId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples].Columns[Balance     ]"
+                          name="Balance     "
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples].Columns[CreditLimit   ]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[CreditLimit   ]"
+                          length="14"
+                          lineageId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples].Columns[CreditLimit   ]"
+                          name="CreditLimit   "
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples].Columns[AccountCreated  ]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[AccountCreated  ]"
+                          length="16"
+                          lineageId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples].Columns[AccountCreated  ]"
+                          name="AccountCreated  "
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples].Columns[Rating ]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Rating ]"
+                          length="9"
+                          lineageId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples].Columns[Rating ]"
+                          name="Rating "
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Account ]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          name="Account " />
+                        <externalMetadataColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[LastName        ]"
+                          codePage="1252"
+                          dataType="str"
+                          length="16"
+                          name="LastName        " />
+                        <externalMetadataColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[FirstName       ]"
+                          codePage="1252"
+                          dataType="str"
+                          length="16"
+                          name="FirstName       " />
+                        <externalMetadataColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Balance     ]"
+                          codePage="1252"
+                          dataType="str"
+                          length="12"
+                          name="Balance     " />
+                        <externalMetadataColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[CreditLimit   ]"
+                          codePage="1252"
+                          dataType="str"
+                          length="14"
+                          name="CreditLimit   " />
+                        <externalMetadataColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[AccountCreated  ]"
+                          codePage="1252"
+                          dataType="str"
+                          length="16"
+                          name="AccountCreated  " />
+                        <externalMetadataColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Rating ]"
+                          codePage="1252"
+                          dataType="str"
+                          length="9"
+                          name="Rating " />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Erro de Origem de Arquivo Simples]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem de Arquivo Simples">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[Coluna de Saída de Erro de Origem de Arquivo Simples]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Coluna de Saída de Erro de Origem de Arquivo Simples"
+                          lineageId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[Coluna de Saída de Erro de Origem de Arquivo Simples]"
+                          name="Coluna de Saída de Erro de Origem de Arquivo Simples" />
+                        <outputColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Multicast"
+                  componentClassID="Microsoft.Multicast"
+                  contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+                  description="Distribui cada linha de entrada em cada linha em uma ou mais saídas. Por exemplo, ramifique seu fluxo de dados para criar uma cópia de dados de forma que alguns valores possam ser mascarados antes do compartilhamento com parceiros externos."
+                  name="Multicast">
+                  <inputs>
+                    <input
+                      refId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Multicast.Inputs[Multicast Entrada 1]"
+                      name="Multicast Entrada 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Multicast.Outputs[Multicast Saída 1]"
+                      dangling="true"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Saída 1"
+                      synchronousInputId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Multicast.Inputs[Multicast Entrada 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width.Paths[Saída de Origem de Arquivo Simples]"
+                  endId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Multicast.Inputs[Multicast Entrada 1]"
+                  name="Saída de Origem de Arquivo Simples"
+                  startId="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados.Outputs[Saída de Origem de Arquivo Simples]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Importar arquivos de largura fixa.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{DE1CF64C-E457-4AEB-B247-50D64A94C69A}"
+          DTS:From="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="271.2,48.8"
+          Id="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab"
+          TopLeft="71.0333259117276,49.4666655939155" />
+        <NodeLayout
+          Size="212.8,41.6"
+          Id="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width"
+          TopLeft="71.0333259117276,158.266665593916" />
+        <EdgeLayout
+          Id="Package\Importar arquivos de largura fixa.PrecedenceConstraints[Constraint]"
+          TopLeft="206.633325911728,98.2666655939155">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-29.2,60"
+              Start="0,0"
+              End="-29.2,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="-4,30" />
+                  <mssgle:LineSegment
+                    End="-25.2,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-25.2,30"
+                    Point2="-29.2,30"
+                    Point3="-29.2,34" />
+                  <mssgle:LineSegment
+                    End="-29.2,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="435.2,261.6"
+          Size="435.2,304.8"
+          Id="Package\Importar arquivos de largura fixa"
+          TopLeft="64.9999964485567,61.5333329054382" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="204.8,41.6"
+          Id="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Origem de Arquivo Simples"
+          TopLeft="59.1666634339427,78.8666661182377" />
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB"
+          TopLeft="194.999989345671,184.599998716315" />
+        <EdgeLayout
+          Id="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab.Paths[Saída de Origem de Arquivo Simples]"
+          TopLeft="161.566663433943,120.466666118238">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="110.633325911728,64.1333325980776"
+              Start="0,0"
+              End="110.633325911728,56.6333325980776">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.0666662990388" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.0666662990388"
+                    Point2="0,32.0666662990388"
+                    Point3="4,32.0666662990388" />
+                  <mssgle:LineSegment
+                    End="106.633325911728,32.0666662990388" />
+                  <mssgle:CubicBezierSegment
+                    Point1="106.633325911728,32.0666662990388"
+                    Point2="110.633325911728,32.0666662990388"
+                    Point3="110.633325911728,36.0666662990388" />
+                  <mssgle:LineSegment
+                    End="110.633325911728,56.6333325980776" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Importar arquivos de largura fixa\Importar Arquivo Com Delilitador Tab\Destino OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="128,41.6"
+          Id="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Get Dados"
+          TopLeft="111.666665002704,90.8333319798112" />
+        <NodeLayout
+          Size="119.2,41.6"
+          Id="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width\Multicast"
+          TopLeft="194.999997094274,216.666663438082" />
+        <EdgeLayout
+          Id="Package\Importar arquivos de largura fixa\Importar Arquivo Fixed Width.Paths[Saída de Origem de Arquivo Simples]"
+          TopLeft="175.666665002704,132.433331979811">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="78.9333320915699,84.2333314582705"
+              Start="0,0"
+              End="78.9333320915699,76.7333314582705">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.1166657291352" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.1166657291352"
+                    Point2="0,42.1166657291352"
+                    Point3="4,42.1166657291352" />
+                  <mssgle:LineSegment
+                    End="74.9333320915699,42.1166657291352" />
+                  <mssgle:CubicBezierSegment
+                    Point1="74.9333320915699,42.1166657291352"
+                    Point2="78.9333320915699,42.1166657291352"
+                    Point3="78.9333320915699,46.1166657291352" />
+                  <mssgle:LineSegment
+                    End="78.9333320915699,76.7333314582705" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="31.4666660457849,47.1166657291352,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

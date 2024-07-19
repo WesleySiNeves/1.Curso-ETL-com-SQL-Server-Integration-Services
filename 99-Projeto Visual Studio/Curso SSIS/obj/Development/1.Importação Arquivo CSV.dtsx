@@ -1,0 +1,404 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/27/2024 3:55:49 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="NB188"
+  DTS:CreatorName="IMPLANTA\Wesley.Neves"
+  DTS:DTSID="{278DFFFF-278B-4D75-9931-19976ED7C2A0}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{70F8B5D3-83AD-4202-8A41-8CC9DF5D2796}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Arquivo Clientes Csv]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="Arquivo Clientes"
+      DTS:DTSID="{FD50489C-DF90-4AFF-AB81-6963373AFE89}"
+      DTS:ObjectName="Arquivo Clientes Csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1046"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="D:\wesley\2.Myrepos\1.Curso-ETL-com-SQL-Server-Integration-Services\99-Projeto Visual Studio\Arquivos\Clientes.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IdCliente"
+              DTS:DTSID="{45AEE34D-76EB-40E5-A028-EBE471F48931}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Nome"
+              DTS:DTSID="{7995ED09-623B-49AD-9641-BFC4C90543DD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Email"
+              DTS:DTSID="{4E2825CE-0A8D-4D08-B042-409879CC0484}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Telefone"
+              DTS:DTSID="{7FE0BE43-EDE9-4A8D-889D-FDC35FE5DF09}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[NB188.PortalVendas]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DF8CA83F-C0CC-4F4C-965A-E586FED82FAD}"
+      DTS:ObjectName="NB188.PortalVendas">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=NB188;Initial Catalog=PortalVendas;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{DF8CA83F-C0CC-4F4C-965A-E586FED82FAD}NB188.PortalVendas;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{0F1910BC-AC2D-4ED7-BC9D-5B0DD949FBC0}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Importar Arquivo Csv"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarefa Fluxo de Dados"
+          DTS:DTSID="{15EC76A7-4B5D-49EB-9E29-834F867F98C3}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Importar Arquivo Csv"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Importar Arquivo Csv\Get Dados CSV"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Origem de Arquivo Simples;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+                  description="Origem de Arquivo Simples"
+                  localeId="1046"
+                  name="Get Dados CSV"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Especifica se colunas de comprimento zero são tratadas como nulas."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome de uma coluna de saída que contém o nome do arquivo. Se nenhum nome for especificado, nenhuma coluna de saída contendo o nome de arquivo será gerada."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Importar Arquivo Csv\Get Dados CSV.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Arquivo Clientes Csv]"
+                      connectionManagerRefId="Package.ConnectionManagers[Arquivo Clientes Csv]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Importar Arquivo Csv\Get Dados CSV.Outputs[Saída de Origem de Arquivo Simples]"
+                      name="Saída de Origem de Arquivo Simples">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Importar Arquivo Csv\Get Dados CSV.Outputs[Saída de Origem de Arquivo Simples].Columns[IdCliente]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Importar Arquivo Csv\Get Dados CSV.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[IdCliente]"
+                          lineageId="Package\Sequence Container\Importar Arquivo Csv\Get Dados CSV.Outputs[Saída de Origem de Arquivo Simples].Columns[IdCliente]"
+                          name="IdCliente"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Importar Arquivo Csv\Get Dados CSV.Outputs[Saída de Origem de Arquivo Simples].Columns[Nome]"
+                          codePage="65001"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Importar Arquivo Csv\Get Dados CSV.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Nome]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Importar Arquivo Csv\Get Dados CSV.Outputs[Saída de Origem de Arquivo Simples].Columns[Nome]"
+                          name="Nome"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Importar Arquivo Csv\Get Dados CSV.Outputs[Saída de Origem de Arquivo Simples].Columns[Email]"
+                          codePage="65001"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Importar Arquivo Csv\Get Dados CSV.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Email]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Importar Arquivo Csv\Get Dados CSV.Outputs[Saída de Origem de Arquivo Simples].Columns[Email]"
+                          name="Email"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Importar Arquivo Csv\Get Dados CSV.Outputs[Saída de Origem de Arquivo Simples].Columns[Telefone]"
+                          codePage="65001"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Importar Arquivo Csv\Get Dados CSV.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Telefone]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Importar Arquivo Csv\Get Dados CSV.Outputs[Saída de Origem de Arquivo Simples].Columns[Telefone]"
+                          name="Telefone"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Importar Arquivo Csv\Get Dados CSV.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[IdCliente]"
+                          dataType="i4"
+                          name="IdCliente" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Importar Arquivo Csv\Get Dados CSV.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Nome]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="Nome" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Importar Arquivo Csv\Get Dados CSV.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Email]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="Email" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Importar Arquivo Csv\Get Dados CSV.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[Telefone]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="Telefone" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Importar Arquivo Csv\Get Dados CSV.Outputs[Saída de Erro de Origem de Arquivo Simples]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem de Arquivo Simples">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Importar Arquivo Csv\Get Dados CSV.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[Coluna de Saída de Erro de Origem de Arquivo Simples]"
+                          codePage="65001"
+                          dataType="text"
+                          description="Coluna de Saída de Erro de Origem de Arquivo Simples"
+                          lineageId="Package\Sequence Container\Importar Arquivo Csv\Get Dados CSV.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[Coluna de Saída de Erro de Origem de Arquivo Simples]"
+                          name="Coluna de Saída de Erro de Origem de Arquivo Simples" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Importar Arquivo Csv\Get Dados CSV.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Importar Arquivo Csv\Get Dados CSV.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Importar Arquivo Csv\Get Dados CSV.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Importar Arquivo Csv\Get Dados CSV.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Importar Arquivo Csv\Multicast"
+                  componentClassID="Microsoft.Multicast"
+                  contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+                  description="Distribui cada linha de entrada em cada linha em uma ou mais saídas. Por exemplo, ramifique seu fluxo de dados para criar uma cópia de dados de forma que alguns valores possam ser mascarados antes do compartilhamento com parceiros externos."
+                  name="Multicast">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Importar Arquivo Csv\Multicast.Inputs[Multicast Entrada 1]"
+                      name="Multicast Entrada 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Importar Arquivo Csv\Multicast.Outputs[Multicast Saída 1]"
+                      dangling="true"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Saída 1"
+                      synchronousInputId="Package\Sequence Container\Importar Arquivo Csv\Multicast.Inputs[Multicast Entrada 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Importar Arquivo Csv.Paths[Saída de Origem de Arquivo Simples]"
+                  endId="Package\Sequence Container\Importar Arquivo Csv\Multicast.Inputs[Multicast Entrada 1]"
+                  name="Saída de Origem de Arquivo Simples"
+                  startId="Package\Sequence Container\Importar Arquivo Csv\Get Dados CSV.Outputs[Saída de Origem de Arquivo Simples]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Sequence Container\Importar Arquivo Csv"
+          TopLeft="34.033323999412,36.9333320195146" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="384,184"
+          Size="384,227.2"
+          Id="Package\Sequence Container"
+          TopLeft="136.666659199529,109.199999240637" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Importar Arquivo Csv">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="119.2,41.6"
+          Id="Package\Sequence Container\Importar Arquivo Csv\Multicast"
+          TopLeft="472.727246898594,172.545453345595" />
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\Sequence Container\Importar Arquivo Csv\Get Dados CSV"
+          TopLeft="137.272719772476,122.751514297917" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Importar Arquivo Csv.Paths[Saída de Origem de Arquivo Simples]"
+          TopLeft="289.272719772476,143.551514297917">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="183.454527126118,49.793939047678"
+              Start="0,0"
+              End="175.954527126118,49.793939047678">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="87.727263563059,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="87.727263563059,0"
+                    Point2="91.727263563059,0"
+                    Point3="91.727263563059,4" />
+                  <mssgle:LineSegment
+                    End="91.727263563059,45.793939047678" />
+                  <mssgle:CubicBezierSegment
+                    Point1="91.727263563059,45.793939047678"
+                    Point2="91.727263563059,49.793939047678"
+                    Point3="95.727263563059,49.793939047678" />
+                  <mssgle:LineSegment
+                    End="175.954527126118,49.793939047678" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="83.727263563059,-22,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
