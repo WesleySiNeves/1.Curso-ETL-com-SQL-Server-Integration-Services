@@ -1,0 +1,42 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/28/2024 9:41:49 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="NB188"
+  DTS:CreatorName="IMPLANTA\Wesley.Neves"
+  DTS:DTSID="{615048D5-C1F5-415C-8DB6-A16C18A70537}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="4 Importa Data SQL Server To Sql Server"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{37171206-030B-4F55-8175-28F232B78A28}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Localhost.DB_23_Parcelamentos]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{683F2DC4-B970-4CA4-9182-F16361A309F3}"
+      DTS:ObjectName="Localhost.DB_23_Parcelamentos">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=Localhost;Initial Catalog=DB_23_Parcelamentos;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-4 Importa Data SQL Server To Sql Server-{683F2DC4-B970-4CA4-9182-F16361A309F3}Localhost.DB_23_Parcelamentos;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables />
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
